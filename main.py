@@ -111,6 +111,7 @@ class GroundControlApp(App):
             self.config.write()
         
         self.data.comport = self.config.get('Maslow Settings', 'COMport')
+        self.data.baudRate = int(self.config.get('Maslow Settings', 'baudRate'))
         self.data.gcodeFile = self.config.get('Maslow Settings', 'openFile')
         offsetX = float(self.config.get('Advanced Settings', 'homeX'))
         offsetY = float(self.config.get('Advanced Settings', 'homeY'))
@@ -238,7 +239,10 @@ class GroundControlApp(App):
         if section == "Maslow Settings":
             if key == "COMport":
                 self.data.comport = value
-            
+
+            if key == "baudRate":
+                self.data.baudRate = int(value)
+
             if (key == "bedHeight" or key == "bedWidth"):
                 self.frontpage.gcodecanvas.drawWorkspace()
 

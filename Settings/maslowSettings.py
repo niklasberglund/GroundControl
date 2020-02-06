@@ -42,6 +42,14 @@ settings = {
                 "default": ''
             },
             {
+                "type": "options",
+                "title": "Baud rate",
+                "desc": "Select baud rate at which to communicate with the Arduino",
+                "key": "baudRate",
+                "options": ["300", "600", "1200", "2400", "4800", "9600", "14400", "19200", "28800", "38400", "57600", "115200", "230400"],
+                "default": "57600",
+            },
+            {
                 "type": "string",
                 "title": "Distance Between Motors",
                 "desc": "The horizontal distance between the center of the motor shafts in MM.",
